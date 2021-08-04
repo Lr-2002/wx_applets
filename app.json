@@ -1,33 +1,49 @@
 {
+  "entryPagePath": "pages/homepage/homepage",
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index"
+  },
   "pages": [
+    "pages/homepage/homepage",
     "pages/index/index",
     "pages/logs/logs",
     "pages/tabbar/tabbar",
-    "pages/homepage/homepage"
+    "pages/login/login",
+    "pages/category/category"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#CBF1F5",
+    "navigationBarBackgroundColor": "#fff",
     "backgroundColor": "#E3FDFD",
-    "navigationBarTitleText": "你好",
+    "navigationBarTitleText": "兼职之家",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "backgroundColor": "#CBF1F5",
+    "color": "#00000",
+    "selectcolor": "#5089C6",
+    "backgroundColor": "#fff",
     "position": "bottom",
     "list": [
       {
-        "iconPath": "utils/utils/首页_home.png",
-        "pagePath": "pages/tabbar/tabbar",
+        
+        "iconPath": "utils/utils/首页_home_0.png",
+        "pagePath": "pages/homepage/homepage",
+        "selectedIconPath": "utils/utils/首页_home.png",
         "text": "首页"
       },
       {
-        "iconPath": "utils/utils/我的_me.png",
+        "pagePath": "pages/category/category",
+        "iconPath": "utils/utils/全部_0.png",
+        "selectedIconPath": "utils/utils/全部.png",
+        "text" : "分类"
+      },
+      {
+        "iconPath": "utils/utils/我的_me_0.png",
+        "selectedIconPath": "utils/utils/我的_me.png",
         "pagePath": "pages/tabbar/tabbar",
         "text": "我的"
       }
     ]
   },
-  "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

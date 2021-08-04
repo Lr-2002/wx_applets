@@ -1,2 +1,10 @@
 <!--pages/homepage/homepage.wxml-->
-<text>pages/homepage/homepage.wxml</text>
+<view class="swiper-container">
+  <swiper class="swiper1" indicator-dots="true" autoplay circular>
+    <swiper-item wx:for="{{banners}}" wx:key="id">
+      <image mode="aspectFill" bindtap="tapBanner" data-url="{{item.linkUrl}}" src="{{item.picUrl}}" width='700rpx' height="250rpx" />这是一张图片
+    </swiper-item>
+  </swiper>
+
+</view>
+

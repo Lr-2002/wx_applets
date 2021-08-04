@@ -1,66 +1,92 @@
-// pages/homepage/homepage.js
+const order = ['demo1', 'demo2', 'demo3']
+const WXAPI = require('apifm-wxapi')
+WXAPI.init('Lr2002')
 Page({
-
-  /**
-   * 页面的初始数据
-   */
+  onShareAppMessage() {
+    return {
+      title: 'scroll-view',
+      path: 'utils\\utils\\WIN_20210502_13_26_56_Pro.jpg'
+    }
+  },
+  onLoad: function(e){
+    WXAPI.province().then(res => {
+      console.log('查看你的省份：',res)
+    })
+    WXAPI.banners().then(res => {
+      if (res.code == 0 )
+      {
+        this.setData({
+          banners:res.data
+        })
+      }
+    })
+    
+  },
+  tapBanner: function(e){
+    const url = e.currentTarget.dateset.url
+    if(url)
+    {
+      wx.navigateTo(
+        {
+          url
+        }
+      )
+    }
+  },
+  async initBanners(){
+    const _data = {}
+    const res1= await   WXAPI.banners({
+      type: 'index'
+    })
+    if(res1.code == 700)
+    {
+      wx.showModal({
+        title:'提示',
+        content:'请在后台添加banner的轮播图片',
+        showCancel:false
+      })
+    }
+    else{
+      _data.banners=res1.data
+    }
+  },
   data: {
-
+    toView: 'green'
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  upper(e) {
+    console.log(e)
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  lower(e) {
+    console.log(e)
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  scroll(e) {
+    console.log(e)
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  scrollToTop() {
+    this.setAction({
+      scrollTop: 0
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  tap() {
+    for (let i = 0; i < order.length; ++i) {
+      if (order[i] === this.data.toView) {
+        this.setData({
+          toView: order[i + 1],
+          scrollTop: (i + 1) * 200
+        })
+        break
+      }
+    }
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  tapMove() {
+    this.setData({
+      scrollTop: this.data.scrollTop + 10
+    })
   }
 })

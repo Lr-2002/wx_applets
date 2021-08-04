@@ -1,0 +1,24 @@
+{
+  "name": "wx_applets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "@vant/weapp": "^1.7.2",
+    "apifm-wxapi": "^3.40.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lr-2002/wx_applets.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lr-2002/wx_applets/issues"
+  },
+  "homepage": "https://github.com/Lr-2002/wx_applets#readme"
+}
