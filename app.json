@@ -1,7 +1,9 @@
 {
   "entryPagePath": "pages/homepage/homepage",
   "usingComponents": {
-    "van-button": "@vant/weapp/button/index"
+    "van-button": "@vant/weapp/button/index",
+    "van-row":"@vant/weapp/row/index",
+    "van-col":"@vant/weapp/col/index"
   },
   "pages": [
     "pages/homepage/homepage",
@@ -9,7 +11,8 @@
     "pages/logs/logs",
     "pages/tabbar/tabbar",
     "pages/login/login",
-    "pages/category/category"
+    "pages/category/category",
+    "pages/sign/sign"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -25,7 +28,6 @@
     "position": "bottom",
     "list": [
       {
-        
         "iconPath": "utils/utils/首页_home_0.png",
         "pagePath": "pages/homepage/homepage",
         "selectedIconPath": "utils/utils/首页_home.png",
@@ -35,7 +37,7 @@
         "pagePath": "pages/category/category",
         "iconPath": "utils/utils/全部_0.png",
         "selectedIconPath": "utils/utils/全部.png",
-        "text" : "分类"
+        "text": "分类"
       },
       {
         "iconPath": "utils/utils/我的_me_0.png",

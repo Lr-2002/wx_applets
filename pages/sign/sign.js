@@ -1,15 +1,12 @@
-// pages/tabbar/tabbar.js
+// pages/sign/sign.js
+const WXAPI = require('apifm-wxapi')
+WXAPI.init('Lr2002')
+
 Page({
 
   /**
    * 页面的初始数据
    */
-  onTapSignUp:function(e)
-  {
-    wx.navigateTo({
-      url: '/pages/sign/sign',
-    })
-  },
   data: {
 
   },
@@ -26,6 +23,22 @@ Page({
    */
   onReady: function () {
 
+  },
+  sign:function(e)
+  {
+    if (!e.detail.userInfo){
+      return;
+    }
+    wx.login({
+      success :function(res){
+        const code = res.code;
+        WXAPI.register_simple({
+          code:code
+        }).then(function(res){
+          console.log(res)
+        })
+      }
+    })
   },
 
   /**

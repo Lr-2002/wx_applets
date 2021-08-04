@@ -33,6 +33,16 @@ page{
   height: 250rpx;
 }
 .swiper-container .siwper1 .image{
-  width: 700rpx;
-  height: 250rpx  ;
+  position: absolute;
+  top :50%;
+  left: 50%;
+  display:block;
+  min-width: 100%;
+  min-height:100%;
+  transform:translate(-50%,-50%);
+}
+
+.van-col
+{
+  margin:auto;
 }

@@ -2,9 +2,16 @@
 <view class="swiper-container">
   <swiper class="swiper1" indicator-dots="true" autoplay circular>
     <swiper-item wx:for="{{banners}}" wx:key="id">
-      <image mode="aspectFill" bindtap="tapBanner" data-url="{{item.linkUrl}}" src="{{item.picUrl}}" width='700rpx' height="250rpx" />这是一张图片
+      <image class = "image" aspectFill bindtap="tapBanner" data-url="{{item.linkUrl}}" src="{{item.picUrl}}" width='700rpx' height="260rpx" />
     </swiper-item>
   </swiper>
-
 </view>
+
+<van-row class="van-col">
+  <van-col span="6">span: 8</van-col>
+  <van-col span="6">span: 8</van-col>
+  <van-col span="6">span: 8</van-col>
+  <van-col span="6">span: 8</van-col>
+</van-row>
+
 

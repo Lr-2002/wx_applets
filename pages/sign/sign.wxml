@@ -1,0 +1,2 @@
+<!--pages/sign/sign.wxml-->
+<van-button color='#f00'>注册</van-button>

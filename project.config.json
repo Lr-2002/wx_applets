@@ -51,6 +51,8 @@
     "servePath": ""
   },
   "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
   "condition": {
     "search": {
       "list": []
@@ -70,5 +72,6 @@
     "miniprogram": {
       "list": []
     }
-  }
+  },
+  "miniprogramRoot": "e:\\wx_applets\\wx_applets"
 }

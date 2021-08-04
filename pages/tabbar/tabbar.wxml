@@ -1,2 +1,3 @@
 <!--pages/tabbar/tabbar.wxml-->
 <text>pages/tabbar/tabbar.wxml</text>
+<van-button color="#7232dd" bindtap="onTapSignUp">按钮</van-button>
